@@ -21,5 +21,7 @@ def get_comments(pull_request_id: int) -> Response:
     return parse_response(response, Comment)
 
 
-res_comm = get_comments(6956)
-print(res_comm)
+r1 = get_pull_requests()
+r2 = get_comments(6956)
+print(r1)
+print(r2)

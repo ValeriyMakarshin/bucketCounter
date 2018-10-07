@@ -26,11 +26,12 @@ def parse_response(json_str: str, clazz: type) -> Response:
 
 
 def parse_pull_request(json_dic: dict) -> PullRequest:
+    pull_request_id = json_dic['id']
     title = json_dic['title']
     created_date = json_dic['createdDate']
     author_json_dic = json_dic['author']
     author = parse_author(author_json_dic)
-    return PullRequest(title, created_date, author)
+    return PullRequest(pull_request_id, title, created_date, author)
 
 
 def parse_author(json_dic: dict) -> Author:
