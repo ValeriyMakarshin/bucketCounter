@@ -5,7 +5,7 @@ COMMENT_PATH = 'pull-requests/{}/activities'
 
 
 def get_pull_requests():
-    params = {'avatarSize': 1, 'order': 'newest', 'state': 'ALL', 'start': 0}
+    params = {'order': 'newest', 'state': 'ALL', 'start': 0}
     return get_request(url_postfix=PULL_REQUEST_PATH, params=params)
 
 
@@ -15,4 +15,5 @@ def get_comments(pull_request_id: int):
     return get_request(url_postfix=url_postfix, params=params)
 
 
-print(get_comments(6961).text)
+# print(get_comments(6961).text)
+print(get_pull_requests().text)
