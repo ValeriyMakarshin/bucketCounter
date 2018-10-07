@@ -30,11 +30,13 @@ def parse_pull_request(json_dic: dict) -> PullRequest:
     title = json_dic['title']
     created_date = json_dic['createdDate']
     closed_date = json_dic['closedDate']
+    comment_count = json_dic['properties']['commentCount']
     author_json_dic = json_dic['author']
     author = parse_author(author_json_dic)
     return PullRequest(
         pull_request_id=pull_request_id,
         title=title,
+        comment_count=comment_count,
         created_date=created_date,
         closed_date=closed_date,
         author=author
