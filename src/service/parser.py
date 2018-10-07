@@ -6,6 +6,7 @@ from src.model.comment import Comment
 from src.model.pull_request import PullRequest
 from src.model.response import Response
 from src.model.reviewer import Reviewer
+from src.model.status import parse_status
 from src.model.user import User
 
 
@@ -54,7 +55,8 @@ def parse_comment_count(json_dic: dict) -> int:
 
 
 def parse_reviewers(json_dic: dict) -> Reviewer:
-    status = json_dic['status']
+    status_str = json_dic['status']
+    status = parse_status(status_str)
     user_dic = json_dic['user']
     user = parse_user(user_dic)
     return Reviewer(status=status, user=user)

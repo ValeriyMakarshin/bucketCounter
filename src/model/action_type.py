@@ -18,4 +18,4 @@ def parse_action_type(key: str) -> ActionType:
     for item in ActionType:
         if item.value == key:
             return item
-    raise Exception('new key = {}'.format(key))
+    raise Exception('Unknown key for ActionType= {}'.format(key))

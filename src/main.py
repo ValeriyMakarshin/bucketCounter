@@ -1,5 +1,6 @@
 from src.command.get_all_comment_from_pull_request_command import get_all_comment_from_pull_request
 from src.command.get_all_pull_request_command import get_all_pull_request_with_time_limitation
+from src.statistic.approver_statistic import count_approved
 from src.statistic.author_statistic import count_author
 from src.statistic.comment_statistic import count_comment
 from src.utils.timer import Timer
@@ -17,8 +18,14 @@ def print_statistic_pull_request_author():
     print(statistic)
 
 
+def print_statistic_approved():
+    pull_requests = get_all_pull_request_with_time_limitation(state_params='MERGED')
+    statistic = count_approved(pull_requests)
+    print(statistic)
+
+
 if __name__ == '__main__':
     timer = Timer()
     timer.start_timer()
-    print_statistic_pull_request_author()
+    print_statistic_approved()
     print(timer.finish_timer())
