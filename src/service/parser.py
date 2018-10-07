@@ -50,4 +50,16 @@ def parse_comment(json_dic: dict) -> Comment:
     user = parse_user(user_json_dic)
     action_type_key = json_dic['action']
     action_type = parse_action_type(action_type_key)
-    return Comment(user, action_type)
+    message = parse_message(json_dic)
+    return Comment(user, action_type, message)
+
+
+def parse_message(json_dic: dict) -> str:
+    comment_key = 'comment'
+    return json_dic[comment_key]['text'] if comment_key in json_dic else None
+
+
+if __name__ == '__main__':
+    from src.command.get_all_comment_command import get_all_comment_for_pull_request
+
+    print(get_all_comment_for_pull_request(7004))

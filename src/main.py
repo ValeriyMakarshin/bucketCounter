@@ -12,5 +12,5 @@ def print_statistic_comment():
 if __name__ == '__main__':
     timer = Timer()
     timer.start_timer()
-    print_statistic_comment()
-    print(timer.finish_time)
+    # print_statistic_comment()
+    print(timer.finish_timer())

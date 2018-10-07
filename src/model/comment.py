@@ -4,6 +4,7 @@ from src.model.user import User
 
 class Comment(object):
 
-    def __init__(self, user: User, action: ActionType):
+    def __init__(self, user: User, action: ActionType, message: str = None):
         self.user = user
         self.action = action
+        self.message = message
