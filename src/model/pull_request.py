@@ -2,6 +2,8 @@ from src.model.author import Author
 
 
 class PullRequest(object):
-    title: str
-    createdDate: int
-    author: Author
+
+    def __init__(self, title: str, created_date: int, author: Author):
+        self.title: str = title
+        self.created_date: int = created_date
+        self.author: Author = author

@@ -1,2 +1,4 @@
 class User(object):
-    displayName: str = ''
+
+    def __init__(self, display_name: str):
+        self.display_name: str = display_name

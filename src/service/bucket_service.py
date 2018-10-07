@@ -1,4 +1,6 @@
+from src.model.pull_request import PullRequest
 from src.service.api import get_request
+from src.service.parser import parse_response
 
 PULL_REQUEST_PATH = 'pull-requests'
 COMMENT_PATH = 'pull-requests/{}/activities'
@@ -16,4 +18,6 @@ def get_comments(pull_request_id: int):
 
 
 # print(get_comments(6961).text)
-print(get_pull_requests().text)
+res = get_pull_requests().text
+parse_response(res, PullRequest)
+# print(get_pull_requests().text)
