@@ -14,6 +14,3 @@ def get_request(url_postfix: str, params: dict = {}):
         params=params
     )
     return response.text
-
-
-get_request('pull-requests')
