@@ -6,7 +6,8 @@ TRIGGER_ACTION = ActionType.COMMENTED
 
 
 def count_comment(comments: list) -> Counter:
-    counter = Counter()
+    comment_count = len(comments)
+    counter = Counter(comment_count)
     for comment in comments:
         if check_comment(comment):
             counter.consider_user(comment.user)

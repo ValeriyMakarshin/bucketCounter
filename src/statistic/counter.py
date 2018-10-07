@@ -2,8 +2,9 @@ from src.model.user import User
 
 
 class Counter(object):
-    def __init__(self):
+    def __init__(self, total=0):
         self.user_dict = dict()
+        self.total = total
 
     def consider_user(self, user: User):
         user_name = user.__str__()
@@ -15,4 +16,5 @@ class Counter(object):
         for user_name, user_count in self.user_dict.items():
             string += '\t{} : {}\n'.format(user_name, user_count)
         string += '}'
+        string += '\nTotal: {}'.format(self.total)
         return string
