@@ -13,9 +13,3 @@ class Counter(object):
     def __str__(self) -> str:
         return self.user_dict.__str__()
 
-
-if __name__ == '__main__':
-    counter = Counter()
-    user1 = User('123')
-    counter.consider_user(user1)
-    print(counter)
