@@ -1,6 +1,6 @@
 from src.model.action_type import ActionType
 from src.model.comment import Comment
-from src.utils.counter import Counter
+from src.statistic.counter import Counter
 
 TRIGGER_ACTION = ActionType.COMMENTED
 
