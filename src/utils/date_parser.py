@@ -1,6 +1,6 @@
 import datetime
 
-RUBICON_DATE = datetime.datetime(year=2018, month=10, day=1).timestamp()
+RUBICON_DATE = datetime.datetime(year=2018, month=10, day=5).timestamp()
 MILLISECOND_IN_SECOND = 1e3
 
 

@@ -11,5 +11,8 @@ class Counter(object):
         self.user_dict[user_name] = actual_count + 1 if actual_count else 1
 
     def __str__(self) -> str:
-        return self.user_dict.__str__()
-
+        string = '{\n'
+        for user_name, user_count in self.user_dict.items():
+            string += '\t{} : {}\n'.format(user_name, user_count)
+        string += '}'
+        return string
