@@ -43,8 +43,18 @@ def print_statistic_duration_in_authors_pull_request():
     print(statistic)
 
 
+# Включать нужные статистики
+def check_statistic():
+    # print_statistic_comment()
+    # print_statistic_pull_request_author()
+    # print_statistic_approved()
+    print_statistic_comment_in_authors_pull_request()
+    # print_statistic_duration_in_authors_pull_request()
+    pass
+
+
 if __name__ == '__main__':
     timer = Timer()
     timer.start_timer()
-    print_statistic_duration_in_authors_pull_request()
+    check_statistic()
     print(timer.finish_timer())
