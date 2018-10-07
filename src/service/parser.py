@@ -57,9 +57,3 @@ def parse_comment(json_dic: dict) -> Comment:
 def parse_message(json_dic: dict) -> str:
     comment_key = 'comment'
     return json_dic[comment_key]['text'] if comment_key in json_dic else None
-
-
-if __name__ == '__main__':
-    from src.command.get_all_comment_command import get_all_comment_for_pull_request
-
-    print(get_all_comment_for_pull_request(7004))

@@ -8,5 +8,6 @@ def count_comment(comments: list) -> Counter:
     counter = Counter()
     for comment in comments:
         if comment.action == TRIGGER_ACTION:
+            print(comment)
             counter.consider_user(comment.user)
     return counter
