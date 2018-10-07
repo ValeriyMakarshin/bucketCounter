@@ -11,6 +11,7 @@ class ActionType(Enum):
     UNAPPROVED = 'UNAPPROVED'
     REOPENED = 'REOPENED'
     DECLINED = 'DECLINED'
+    UPDATED = 'UPDATED'
 
 
 def parse_action_type(key: str) -> ActionType:
