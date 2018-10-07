@@ -2,6 +2,8 @@ from src.model.user import User
 
 
 class Average(object):
+    str_before_block = lambda _, x: x
+
     def __init__(self):
         self.user_dict = dict()
 
@@ -24,6 +26,7 @@ class Average(object):
         average_dict = self.get_average_dict()
         string = '{\n'
         for user_name, user_count in average_dict.items():
+            user_count = self.str_before_block(user_count)
             string += '\t{} : {}\n'.format(user_name, user_count)
         string += '}'
         return string
