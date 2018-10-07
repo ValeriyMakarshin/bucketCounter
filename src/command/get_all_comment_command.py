@@ -17,8 +17,3 @@ def get_all_comment_for_pull_request(pull_request_id: int) -> list:
         if iteration_result.is_last_page:
             break
     return all_comments
-
-
-if __name__ == '__main__':
-    r = get_all_comment_for_pull_request(6695)
-    print(r)
