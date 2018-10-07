@@ -28,6 +28,14 @@ def print_statistic_approved():
     print(statistic)
 
 
+# Среднее число коментариев у автора pr
+def print_statistic_comment_in_authors_pull_request():
+    pull_requests = get_all_pull_request_with_time_limitation(state_params='ALL')
+    statistic = count_average_comment(pull_requests)
+    print(statistic)
+
+
+# Среднее число время прохождения pr у каждого человека
 def print_statistic_approved123():
     pull_requests = get_all_pull_request_with_time_limitation(state_params='MERGED')
     statistic = count_average_comment(pull_requests)

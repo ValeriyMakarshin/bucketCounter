@@ -9,6 +9,8 @@ from src.model.reviewer import Reviewer
 from src.model.status import parse_status
 from src.model.user import User
 
+DEFAULT_DATE_VALUE = 0
+
 
 def parse_response(json_str: str, clazz: type) -> Response:
     json_dic = json.loads(json_str)
@@ -31,7 +33,7 @@ def parse_pull_request(json_dic: dict) -> PullRequest:
     pull_request_id = json_dic['id']
     title = json_dic['title']
     created_date = json_dic['createdDate']
-    closed_date = json_dic['closedDate']
+    closed_date = parse_closed_date(json_dic)
     comment_count = parse_comment_count(json_dic)
     reviewers_list = json_dic['reviewers']
     reviewers = list(parse_reviewers(item_json) for item_json in reviewers_list)
@@ -46,6 +48,11 @@ def parse_pull_request(json_dic: dict) -> PullRequest:
         closed_date=closed_date,
         author=author
     )
+
+
+def parse_closed_date(json_dic: dict) -> int:
+    closed_date_key = 'closedDate'
+    return json_dic[closed_date_key] if closed_date_key in json_dic else DEFAULT_DATE_VALUE
 
 
 def parse_comment_count(json_dic: dict) -> int:
