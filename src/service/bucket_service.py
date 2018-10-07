@@ -8,8 +8,8 @@ PULL_REQUEST_PATH = 'pull-requests'
 COMMENT_PATH = 'pull-requests/{}/activities'
 
 
-def get_pull_requests(start_params: int = 0, limit_params: int = 100) -> Response:
-    params = {'start': start_params, 'limit': limit_params, 'order': 'newest', 'state': 'ALL'}
+def get_pull_requests(start_params: int = 0, limit_params: int = 100, state_params: str = 'ALL') -> Response:
+    params = {'start': start_params, 'limit': limit_params, 'order': 'newest', 'state': state_params}
     response = get_request(url_postfix=PULL_REQUEST_PATH, params=params)
     return parse_response(response, PullRequest)
 

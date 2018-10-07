@@ -12,7 +12,7 @@ def print_statistic_comment():
 
 
 def print_statistic_pull_request_author():
-    pull_requests = get_all_pull_request_with_time_limitation()
+    pull_requests = get_all_pull_request_with_time_limitation(state_params='MERGED')
     statistic = count_author(pull_requests)
     print(statistic)
 
