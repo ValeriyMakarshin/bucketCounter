@@ -1,14 +1,10 @@
 from datetime import datetime
 
-from src.service.bucket_service import get_pull_requests
-
-DATE_START = 1
-SECOND_VALUE = 1e3
+from src.command.get_all_comment_command import get_all_comment_for_pull_request
 
 
 def get_pull_request_for_date():
-    get_pull_requests()
-    # print(response)
+    get_all_comment_for_pull_request()
 
 
 if __name__ == '__main__':
