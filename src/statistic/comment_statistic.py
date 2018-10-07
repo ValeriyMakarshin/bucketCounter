@@ -11,6 +11,7 @@ def count_comment(comments: list) -> Counter:
     for comment in comments:
         if check_comment(comment):
             counter.consider_user(comment.user)
+    counter.sort()
     return counter
 
 

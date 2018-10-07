@@ -6,4 +6,5 @@ def count_author(pull_requests: list) -> Counter:
     counter = Counter(pull_request_count)
     for pull_request in pull_requests:
         counter.consider_user(pull_request.author.user)
+    counter.sort()
     return counter

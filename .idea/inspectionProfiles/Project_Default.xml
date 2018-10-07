@@ -5,6 +5,7 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="object.__call__" />
+          <option value="list.items" />
         </list>
       </option>
     </inspection_tool>
