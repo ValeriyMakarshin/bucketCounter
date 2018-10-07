@@ -14,8 +14,8 @@ def get_pull_requests(start_params: int = 0, limit_params: int = 100) -> Respons
     return parse_response(response, PullRequest)
 
 
-def get_comments(pull_request_id: int) -> Response:
+def get_comments(pull_request_id: int, start_params: int = 0, limit_params: int = 500) -> Response:
     url_postfix = COMMENT_PATH.format(pull_request_id)
-    params = {'start': 0, 'limit': 500}
+    params = {'start': start_params, 'limit': limit_params}
     response = get_request(url_postfix=url_postfix, params=params)
     return parse_response(response, Comment)
