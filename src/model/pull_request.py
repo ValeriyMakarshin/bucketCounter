@@ -8,6 +8,7 @@ class PullRequest(object):
             pull_request_id: int,
             title: str,
             comment_count: int,
+            reviewers: list,
             created_date: int,
             closed_date: int,
             author: Author
@@ -15,6 +16,7 @@ class PullRequest(object):
         self.pull_request_id: int = pull_request_id
         self.title: str = title
         self.comment_count: int = comment_count
+        self.reviewers: list = reviewers
         self.created_date: int = created_date
         self.closed_date: int = closed_date
         self.author: Author = author
