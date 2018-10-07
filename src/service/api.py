@@ -8,12 +8,12 @@ BASE_PROJECT_URL = 'http://git.moscow.alfaintra.net/rest/api/latest/projects/AM/
 
 def get_request(url_postfix: str, params: dict = {}):
     headers = {'Authorization': ACCESS_TOKEN}
-    r = requests.get(
+    response = requests.get(
         url=BASE_PROJECT_URL + url_postfix,
         headers=headers,
         params=params
     )
-    return r
+    return response.text
 
 
 get_request('pull-requests')
