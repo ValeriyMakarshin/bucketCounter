@@ -24,11 +24,10 @@ class Average(object):
 
     def __str__(self) -> str:
         average_dict = self.get_average_dict()
-        string = '{\n'
+        string = ''
         for user_name, user_count in average_dict.items():
             user_count = self.str_before_block(user_count)
-            string += '\t{} : {}\n'.format(user_name, user_count)
-        string += '}'
+            string += '{:35} | {:>17}\n'.format(user_name, user_count)
         return string
 
 

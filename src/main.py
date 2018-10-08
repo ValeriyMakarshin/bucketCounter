@@ -39,6 +39,7 @@ def print_statistic_approved():
 
 # Среднее число коментариев у автора pr
 def print_statistic_comment_in_authors_pull_request():
+    print(TOP_DIVIDER.format("Top pr comment"))
     pull_requests = get_all_pull_request_with_time_limitation(state_params='ALL')
     statistic = count_average_comment(pull_requests)
     print(statistic)
@@ -47,6 +48,7 @@ def print_statistic_comment_in_authors_pull_request():
 
 # Среднее число время прохождения pr у каждого человека (обязательно MERGED т.к. у DECLINED время закрытия выставляю 0)
 def print_statistic_duration_in_authors_pull_request():
+    print(TOP_DIVIDER.format("Top Duration"))
     pull_requests = get_all_pull_request_with_time_limitation(state_params='MERGED')
     statistic = count_average_duration(pull_requests)
     print(statistic)
@@ -58,8 +60,8 @@ def check_statistic():
     # print_statistic_comment()
     print_statistic_pull_request_author()
     print_statistic_approved()
-    # print_statistic_comment_in_authors_pull_request()
-    # print_statistic_duration_in_authors_pull_request()
+    print_statistic_comment_in_authors_pull_request()
+    print_statistic_duration_in_authors_pull_request()
     pass
 
 
