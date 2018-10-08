@@ -18,9 +18,9 @@ class Counter(object):
         self.user_dict = dict(sorted_list)
 
     def __str__(self) -> str:
-        string = '{\n'
+        string = ''
         for user_name, user_count in self.user_dict.items():
-            string += '\t{} : {}\n'.format(user_name, user_count)
-        string += '}'
-        string += '\nTotal: {}'.format(self.total)
+            percent = int(user_count / self.total * 100)
+            string += '{:35} | {:>5} | {}%\n'.format(user_name, user_count, percent)
+        string += 'Total: {}'.format(self.total)
         return string

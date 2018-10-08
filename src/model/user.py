@@ -4,4 +4,4 @@ class User(object):
         self.display_name: str = display_name
 
     def __str__(self) -> str:
-        return 'User(name = "{}")'.format(self.display_name)
+        return self.display_name
